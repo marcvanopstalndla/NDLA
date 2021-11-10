@@ -1,8 +1,8 @@
 videojs.registerPlugin('forceNNcaption', function() {
     var myPlayer = this;
   
-    //myPlayer.on("loadedmetadata", function () {
-    myPlayer.on("loadeddata", function () {
+    myPlayer.on("loadedmetadata", function () {
+    //myPlayer.on("loadeddata", function () {
 
         // Get all text tracks for the current player.
         var tracks = myPlayer.textTracks();
