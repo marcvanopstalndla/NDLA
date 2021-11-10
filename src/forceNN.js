@@ -12,7 +12,7 @@ videojs.registerPlugin('forceNNcaption', function() {
             if (track.kind === 'captions' && track.language.substr(0, 2) === 'nn') {
                 track.mode = 'showing';
             } else {
-                track.mode = 'hidden';
+                track.mode = 'disabled';
             }
         }
     });
