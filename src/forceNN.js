@@ -1,18 +1,17 @@
-videojs.getPlayer("myPlayerID").ready(function () {
-	var myPlayer = this;
+videojs.registerPlugin('forceNNcaption', function() {
+    var myPlayer = this;
   
-  myPlayer.on("loadedmetadata", function () {
-    
-  // Get all text tracks for the current player.
-  var tracks = myPlayer.textTracks();
+    myPlayer.on("loadedmetadata", function () {
 
-  for (var i = 0; i < tracks.length; i++) {
-    var track = tracks[i];
+        // Get all text tracks for the current player.
+        var tracks = myPlayer.textTracks();
 
-    // Find the captions track and mark it as "showing".
-    if (track.kind === 'captions' && track.language === 'nn') {
-      track.mode = 'showing';
-    }
-  }
-  });
+        for (var i = 0; i < tracks.length; i++) {
+            var track = tracks[i];
+            // Find the captions track and mark it as "showing".
+            if (track.kind === 'captions' && track.language === 'nn') {
+              track.mode = 'showing';
+            }
+        }
+    });
 });
