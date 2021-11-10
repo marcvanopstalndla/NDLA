@@ -9,7 +9,7 @@ videojs.registerPlugin('forceNNcaption', function() {
         for (var i = 0; i < tracks.length; i++) {
             var track = tracks[i];
             // Find the captions track and mark it as "showing".
-            if (track.kind === 'captions' && track.language.substr(0, 2) === 'nn') {
+            if (track.kind === 'captions' && track.language.substr(0, 2).toLowerCase() === 'nn') {
                 track.mode = 'showing';
             } else {
                 track.mode = 'disabled';
