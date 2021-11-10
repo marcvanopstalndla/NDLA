@@ -1,3 +1,5 @@
+var player = this;
+
 // Get all text tracks for the current player.
 var tracks = player.textTracks();
 
@@ -9,3 +11,5 @@ for (var i = 0; i < tracks.length; i++) {
     track.mode = 'showing';
   }
 }
+
+return;
