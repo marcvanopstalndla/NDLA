@@ -10,7 +10,9 @@ videojs.registerPlugin('forceNNcaption', function() {
             var track = tracks[i];
             // Find the captions track and mark it as "showing".
             if (track.kind === 'captions' && track.language === 'nn') {
-              track.mode = 'showing';
+                track.mode = 'showing';
+            } else {
+                track.mode = 'hidden';
             }
         }
     });
