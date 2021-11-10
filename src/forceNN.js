@@ -1,15 +1,18 @@
-var player = this;
+videojs.getPlayer("myPlayerID").ready(function () {
+	var myPlayer = this;
+  
+  myPlayer.on("loadedmetadata", function () {
+    
+  // Get all text tracks for the current player.
+  var tracks = myPlayer.textTracks();
 
-// Get all text tracks for the current player.
-var tracks = player.textTracks();
+  for (var i = 0; i < tracks.length; i++) {
+    var track = tracks[i];
 
-for (var i = 0; i < tracks.length; i++) {
-  var track = tracks[i];
-
-  // Find the captions track and mark it as "showing".
-  if (track.kind === 'captions' && track.language === 'nn') {
-    track.mode = 'showing';
+    // Find the captions track and mark it as "showing".
+    if (track.kind === 'captions' && track.language === 'nn') {
+      track.mode = 'showing';
+    }
   }
-}
-
-return;
+  });
+});
