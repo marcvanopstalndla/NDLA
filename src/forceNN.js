@@ -13,7 +13,7 @@ videojs.registerPlugin('forceNNcaption', function() {
             if (track.kind === 'captions' && track.language.substr(0, 2).toLowerCase() === 'nn') {
                 track.mode = 'showing';
             } else {
-                track.mode = 'disabled';
+                //track.mode = 'disabled';
             }
         }
     });
